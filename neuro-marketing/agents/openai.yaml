@@ -1,0 +1,4 @@
+interface:
+  display_name: "Neuro Marketing"
+  short_description: "Evidence-led consumer neuroscience and branding"
+  default_prompt: "Use $neuro-marketing to analyze this marketing or branding problem using the research corpus."

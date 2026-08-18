@@ -1,0 +1,194 @@
+{
+  "removed_papers": 31,
+  "removed_pages": 722,
+  "remaining_papers": 591,
+  "remaining_pages": 10036,
+  "records": [
+    {
+      "pmcid": "PMC13020826",
+      "title": "Two-period e-commerce platforms operation strategies considering the difference in product quality perception",
+      "page_count": 27,
+      "reason": "platform operations model rather than consumer mechanism research"
+    },
+    {
+      "pmcid": "PMC5559086",
+      "title": "Addressing the challenge of high-priced prescription drugs in the era of precision medicine: A systematic review of drug life cycles, therapeutic drug markets and regulatory frameworks",
+      "page_count": 34,
+      "reason": "clinical drug-market regulation rather than marketing psychology"
+    },
+    {
+      "pmcid": "PMC12539743",
+      "title": "Dynamic pricing modeling and inventory management in omnichannel retail using Quantum Decision Theory and reinforcement learning",
+      "page_count": 36,
+      "reason": "inventory and reinforcement-learning operations model"
+    },
+    {
+      "pmcid": "PMC9847980",
+      "title": "Research the effect of anticipated regret and fairness concerns on retailer-led supply chain",
+      "page_count": 26,
+      "reason": "retailer-led supply-chain game model"
+    },
+    {
+      "pmcid": "PMC9388237",
+      "title": "Precise Marketing of E-Commerce Products Based on KNN Algorithm",
+      "page_count": 12,
+      "reason": "KNN targeting algorithm without consumer mechanism evidence"
+    },
+    {
+      "pmcid": "PMC8956418",
+      "title": "Supervision Strategy Analysis on Price Discrimination of E-Commerce Company in the Context of Big Data Based on Four-Party Evolutionary Game",
+      "page_count": 25,
+      "reason": "price-discrimination operations game"
+    },
+    {
+      "pmcid": "PMC11299829",
+      "title": "Differential games in the supply chain of innovative products with consumer purchase regret induced returns",
+      "page_count": 19,
+      "reason": "supply-chain differential game"
+    },
+    {
+      "pmcid": "PMC13033737",
+      "title": "From carbon policy to public health: an analysis of pricing decisions in electronics supply chains for costing emissions reduction",
+      "page_count": 15,
+      "reason": "emissions-costing policy model rather than consumer research"
+    },
+    {
+      "pmcid": "PMC4748126",
+      "title": "Prices and mark-ups on antimalarials: evidence from nationally representative studies in six malaria-endemic countries",
+      "page_count": 13,
+      "reason": "antimalarial market-price surveillance"
+    },
+    {
+      "pmcid": "PMC9070910",
+      "title": "Omni-channel retail operations in the presence of strategic customers: The benefit of inventory commitment",
+      "page_count": 20,
+      "reason": "retail inventory operations model"
+    },
+    {
+      "pmcid": "PMC13004530",
+      "title": "Decision-making on preservation effort and inventory volume for fresh retailer under strategic consumer behavior",
+      "page_count": 17,
+      "reason": "inventory preservation operations model"
+    },
+    {
+      "pmcid": "PMC5615627",
+      "title": "Joint Decisions on Production and Pricing with Strategic Consumers for Green Crowdfunding Products",
+      "page_count": 18,
+      "reason": "production and pricing operations model"
+    },
+    {
+      "pmcid": "PMC6667132",
+      "title": "Competition and price among brand-name drugs in the same class: A systematic review of the evidence",
+      "page_count": 14,
+      "reason": "clinical drug price review"
+    },
+    {
+      "pmcid": "PMC7349401",
+      "title": "Overpriced? Are Hospital Prices Associated with the Quality of Care?",
+      "page_count": 12,
+      "reason": "hospital pricing and quality analysis"
+    },
+    {
+      "pmcid": "PMC10442351",
+      "title": "Supply chain management with uncertainty in consumer perception of product greenness under an eco-label policy",
+      "page_count": 16,
+      "reason": "supply-chain operations model"
+    },
+    {
+      "pmcid": "PMC7038382",
+      "title": "Price Competition and Product Differentiation Based on the Subjective and Social Effect of Consumers’ Environmental Awareness",
+      "page_count": 16,
+      "reason": "price-competition operations model"
+    },
+    {
+      "pmcid": "PMC9603462",
+      "title": "Pricing Policies of Green Dual-Channel Supply Chain with Fairness Concerns and Altruistic Preferences Based on Consumers’ Environmental Awareness and Channel Preference",
+      "page_count": 28,
+      "reason": "dual-channel supply-chain pricing game"
+    },
+    {
+      "pmcid": "PMC9992377",
+      "title": "Emotion recognition based on group phase locking value using convolutional neural network",
+      "page_count": 9,
+      "reason": "generic emotion-recognition algorithm without marketing application"
+    },
+    {
+      "pmcid": "PMC5995966",
+      "title": "Modelling Peri-Perceptual Brain Processes in a Deep Learning Spiking Neural Network Architecture",
+      "page_count": 13,
+      "reason": "generic spiking-network architecture without marketing application"
+    },
+    {
+      "pmcid": "PMC3893564",
+      "title": "Operationalizing interdisciplinary research—a model of co-production in organizational cognitive neuroscience",
+      "page_count": 3,
+      "reason": "organizational research-process paper"
+    },
+    {
+      "pmcid": "PMC5001212",
+      "title": "25th Annual Computational Neuroscience Meeting: CNS-2016",
+      "page_count": 112,
+      "reason": "general computational-neuroscience conference proceedings"
+    },
+    {
+      "pmcid": "PMC11168648",
+      "title": "Research on cooperative advertising strategies for dual channel supply chain of fresh agricultural products considering carbon reduction efficiency under retailer leadership",
+      "page_count": 25,
+      "reason": "cooperative-advertising supply-chain optimization"
+    },
+    {
+      "pmcid": "PMC8718387",
+      "title": "Optimization of competitive supply chains with retailers’ horizontal cooperation and consumers’ green preference",
+      "page_count": 22,
+      "reason": "competitive supply-chain optimization"
+    },
+    {
+      "pmcid": "PMC6696156",
+      "title": "The Stability and Complexity Analysis of a Low-Carbon Supply Chain Considering Fairness Concern Behavior and Sales Service",
+      "page_count": 21,
+      "reason": "low-carbon supply-chain complexity model"
+    },
+    {
+      "pmcid": "PMC6603963",
+      "title": "A Dynamic Price Game Model in a Low-Carbon, Closed-Loop Supply Chain Considering Return Rates and Fairness Concern Behaviors",
+      "page_count": 21,
+      "reason": "closed-loop supply-chain price game"
+    },
+    {
+      "pmcid": "PMC8910743",
+      "title": "Decision-Making and the Contract of the Complementary Product Supply Chain Considering Consumers’ Environmental Awareness and Government Green Subsidies",
+      "page_count": 27,
+      "reason": "supply-chain contract model"
+    },
+    {
+      "pmcid": "PMC10414650",
+      "title": "A remanufacturing supply chain network with differentiated new and remanufactured products considering consumer preference, production capacity constraint and government regulation",
+      "page_count": 32,
+      "reason": "remanufacturing supply-chain network model"
+    },
+    {
+      "pmcid": "PMC7402509",
+      "title": "Energy-saving and pricing decisions in a sustainable supply chain considering behavioral concerns",
+      "page_count": 20,
+      "reason": "sustainable supply-chain pricing model"
+    },
+    {
+      "pmcid": "PMC11086857",
+      "title": "How do e-commerce platforms and retailers implement discount pricing policies under consumers are strategic?",
+      "page_count": 15,
+      "reason": "discount-pricing platform operations model"
+    },
+    {
+      "pmcid": "PMC10977684",
+      "title": "Selection of presale models for innovative products considering channel preferences and valuation differences",
+      "page_count": 22,
+      "reason": "presale-channel operations model"
+    },
+    {
+      "pmcid": "PMC10541849",
+      "title": "Price-Directed Search, Product Differentiation and Competition",
+      "page_count": 32,
+      "reason": "price-search competition model without a consumer mechanism test"
+    }
+  ]
+}

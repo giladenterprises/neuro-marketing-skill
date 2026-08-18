@@ -1,0 +1,22 @@
+{
+  "papers": 591,
+  "pages": 10036,
+  "licenses": [
+    "CC BY",
+    "CC0"
+  ],
+  "compressed_bytes": 9480844,
+  "target_pages": 10001,
+  "pruned_papers": 31,
+  "pruned_pages": 722,
+  "ok": true,
+  "problems": [],
+  "failures": {
+    "no psychology/neuroscience bridge in title or abstract": 173,
+    "low relevance score": 186,
+    "title lacks a consumer, marketing, psychological, or neural focus": 100,
+    "algorithmic marketing without a human mechanism": 7,
+    "no marketing bridge in title or abstract": 1
+  },
+  "updated_utc": "2026-08-18T02:13:36Z"
+}
