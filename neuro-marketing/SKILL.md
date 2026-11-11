@@ -34,6 +34,6 @@ Separate convergent evidence, context-bound findings, and hypotheses. Match each
 
 ## Measure behavior and protect autonomy
 
-Propose the cheapest credible comparison with a behavioral primary outcome, a decision threshold, and guardrails for harm. Use self-report and biometric signals as diagnostics where they answer a specific question. Report uncertainty and missing inputs.
+Propose the cheapest credible comparison with a behavioral primary outcome, a decision threshold, and guardrails for harm. Keep competing exposures comparable across variants, such as shelf position or ad placement. Use self-report and biometric signals as diagnostics where they answer a specific question. Report uncertainty and missing inputs.
 
 Keep prices, terms, sponsorship, and choices clear. Preserve accessible paths and meaningful refusal or exit. Decline deception, coercion, exploitation of vulnerability, and biometric collection without informed consent. Offer a transparent design that serves the same legitimate objective.
