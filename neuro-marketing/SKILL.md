@@ -1,74 +1,39 @@
 ---
 name: neuro-marketing
-description: Evidence-led neuromarketing, consumer neuroscience, marketing psychology, behavioral science, branding, advertising, pricing, persuasion, sensory marketing, attention, emotion, memory, reward, and customer decision analysis. Use when Codex must explain why marketing works, critique or design a brand/campaign/product/packaging/pricing experience, turn behavioral and neural research into ethical recommendations, or distinguish supported consumer-science claims from neuromarketing hype.
+description: Evidence-led neuromarketing, consumer neuroscience, and marketing psychology. Use to diagnose or design branding, ads, landing pages, pricing, packaging, sensory experiences, and customer journeys, or to assess persuasion claims, behavioral experiments, and biometric evidence.
 ---
 
 # Neuro Marketing
 
-Ground marketing and branding decisions in the bundled open-access research corpus. Treat neural measures as evidence about mechanisms, not as a magical purchase detector.
+## Start with the decision
 
-## Evidence workflow
+Identify the audience, setting, current friction, desired voluntary behavior, and observable outcome. Use available data and state assumptions. Ask only when the missing answer would change the recommendation materially.
 
-1. Translate the request into a consumer behavior, mechanism, context, and business outcome.
-2. Read `references/methodology.md` before making scientific or commercial claims.
-3. Search the corpus with 2-4 focused formulations rather than one broad query:
+- **Critique or design:** inspect the actual asset when available. Locate the step where behavior breaks down and propose a concrete change.
+- **Claim or research synthesis:** read [methodology](references/methodology.md). Frame the question around a population, intervention or exposure, comparison, and outcome. Report search scope, evidence selection, disagreements, and limits.
+- **Experiment or measurement:** read [experiment design](references/experiments.md) for tests, decision rules, and biometric diagnostics. Use [worked examples](references/examples.md) for cross-channel applications.
 
-```powershell
-python scripts/search_corpus.py "brand familiarity memory attention" --top 12
-python scripts/search_corpus.py "price framing willingness to pay reward" --theme pricing-value --top 12
-python scripts/search_corpus.py "packaging visual attention eye tracking" --theme sensory-marketing --top 12 --json
+## Diagnose and prioritize
+
+Pick the smallest plausible mechanism and name a competing explanation. Check attention and comprehension before emotion or preference, then consider memory, trust, identity, sensory fit, value, and choice friction as relevant. Check mundane causes such as price, availability, accessibility, and audience mismatch before proposing a neural explanation.
+
+For each ranked recommendation, connect **change → plausible mechanism → observable behavior → test**. Rank by directness of evidence, expected practical value, effort, and downside. Deliver usable copy, design changes, or a protocol when requested.
+
+## Verify material claims
+
+Use [methodology](references/methodology.md) for scientific claims that drive a decision. Search narrowly and inspect the strongest relevant full text before citing. The [evidence map](references/evidence-map.md) describes corpus scope.
+
+```text
+python scripts/search_corpus.py "packaging label search accuracy" --top 5
+python scripts/search_corpus.py --pmcid PMC1234567 --full-text
 ```
 
-4. Triangulate important claims across at least three relevant papers when the corpus permits. Prefer reviews, meta-analyses, preregistered experiments, field studies, and adequately powered replications over a single small laboratory study.
-5. Separate findings into established or convergent evidence, promising but context-bound evidence, and speculation or evidence gaps.
-6. Convert evidence into a testable recommendation. State the intended mechanism, audience, context, expected observable outcome, and the cheapest valid experiment.
-7. Cite DOI or PMCID beside each material claim. Link to the `source_url` returned by the search script.
+Run from the skill directory or pass the script's absolute path. Replace the example PMCID with one from search. Use web research or user-supplied sources if shell, corpus, or relevant evidence is unavailable. With no verifiable sources, label mechanisms as hypotheses and offer a way to test them.
 
-## Diagnose the right layer
+Separate convergent evidence, context-bound findings, and hypotheses. Match each citation to the population, comparison, and measured outcome. Give a source link and DOI or PMCID when available. Distinguish association, prediction, and causation. Gaze, arousal, and neural activity alone cannot establish intent, emotion, or purchase. Never invent citations, effects, or lift.
 
-- **Attention:** salience, visual hierarchy, orienting, gaze, novelty, processing fluency.
-- **Emotion:** valence, arousal, affective forecasting, empathy, avoidance, attachment.
-- **Memory:** encoding, retrieval cues, distinctiveness, repetition, narrative, associative networks.
-- **Value and choice:** reward, willingness to pay, reference points, framing, loss aversion, delay.
-- **Brand:** familiarity, identity, trust, meaning, loyalty, social signaling, category cues.
-- **Sensory experience:** color, sound, touch, scent, taste, packaging, crossmodal correspondence.
-- **Persuasion:** credibility, social influence, norms, scarcity, defaults, reactance, disclosure.
-- **Measurement:** behavioral outcomes first; then eye tracking, psychophysiology, EEG/ERP, fMRI, or implicit measures only when they answer a defined question.
+## Measure behavior and protect autonomy
 
-## Apply scientific discipline
+Propose the cheapest credible comparison with a behavioral primary outcome, a decision threshold, and guardrails for harm. Keep competing exposures comparable across variants, such as shelf position or ad placement. Use self-report and biometric signals as diagnostics where they answer a specific question. Report uncertainty and missing inputs.
 
-- Do not equate brain activation with preference, intent, or causality.
-- Do not reverse-infer a mental state from one region or signal without converging evidence.
-- Distinguish statistical significance from practical lift and out-of-sample prediction.
-- Check sample size, controls, multiple comparisons, ecological validity, population, product category, and whether the outcome was observed behavior or self-report.
-- Treat EEG, fMRI, biometrics, facial coding, and eye tracking as complementary measurements with different temporal, spatial, and interpretive limits.
-- Never invent effect sizes. If the paper extract does not provide one, say so.
-- Distinguish correlation, mediation, prediction, and causal intervention explicitly.
-- Treat abstracts as orientation; use the bundled full text for consequential claims.
-
-## Produce useful outputs
-
-For a campaign, brand, page, package, price, or product critique, return:
-
-1. the consumer problem and desired behavior;
-2. the most likely mechanisms;
-3. research-backed design recommendations, ranked by evidence and expected impact;
-4. risks, boundary conditions, and ethical concerns;
-5. a measurement plan with behavioral primary metrics and optional neural/biometric diagnostics;
-6. citations and unresolved questions.
-
-For research synthesis, include the search terms used, evidence-selection logic, recurring findings, disagreements, methodological weaknesses, and a calibrated conclusion.
-
-## Ethical boundary
-
-Reject dark patterns, covert exploitation, deceptive scarcity, vulnerable-person targeting, non-consensual biometric collection, and claims that a technique can bypass free choice. Favor transparency, informed consent, accessibility, consumer welfare, and reversible experimentation.
-
-## Corpus resources
-
-- `references/evidence-map.md`: corpus scale, coverage, themes, licenses, and retrieval notes.
-- `references/catalog.csv`: one row per paper with provenance and exact PDF page count.
-- `references/corpus.jsonl.gz`: compressed full-text records. Access it through `scripts/search_corpus.py` rather than loading it whole.
-- `references/excluded-records.json`: auditable false-positive removals and reasons.
-- `scripts/harvest_pmc.py`: resumable licensed-corpus builder and verifier.
-
-When the installed corpus lacks the needed context, browse for current primary research, favor open-access sources, and keep new findings separate from bundled evidence unless the user asks to refresh the corpus.
+Keep prices, terms, sponsorship, and choices clear. Preserve accessible paths and meaningful refusal or exit. Decline deception, coercion, exploitation of vulnerability, and biometric collection without informed consent. Offer a transparent design that serves the same legitimate objective.

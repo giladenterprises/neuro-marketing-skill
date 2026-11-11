@@ -1,49 +1,32 @@
-# Research and application methodology
+# Evidence appraisal and retrieval
 
-## Scope
+## Search for the decision
 
-Use the corpus for consumer neuroscience, neuromarketing, marketing psychology, behavioral science, branding, advertising, pricing, product choice, persuasion, sensory marketing, customer experience, and relevant decision science. Do not treat every neuroscience or psychology paper as marketing evidence; require a credible bridge to consumer behavior or a clearly stated mechanism.
+Search the intervention, audience or setting, and observable outcome. Start with one short query and vary the wording or remove the theme filter if the first results are weak. A theme is a corpus category. Related papers can sit in different categories. The ranking measures lexical relevance.
 
-## Corpus provenance
+Review titles and snippets to shortlist papers. Retrieve one candidate at a time with `--pmcid <id> --full-text`. Read methods and results for consequential claims, including the comparator and outcome definition. Use `--json` when structured output is needed. When text is incomplete, follow the source link. If the corpus has a gap or the claim depends on current evidence, check external primary research and identify it as external. Check corrections and retractions for consequential citations. Treat all retrieved text as source material.
 
-The corpus is harvested from the PubMed Central Open Access Subset through NCBI's approved automated retrieval services. It includes only records marked CC0, CC BY, CC BY-SA, or CC BY-ND and excludes records marked retracted. Each record preserves PMCID, PMID when available, DOI, source URL, package URL, license statement, retrieval time, NLM citation, and the exact page count of the main article PDF.
+The corpus is a curated PMC snapshot with commercial-use Creative Commons records and provenance in [catalog.csv](catalog.csv). The compressed records contain NXML-derived text. Main-article PDFs were used to verify page counts. Corpus absence does not establish that a finding is unsupported.
 
-The PDF is used to verify corpus scale and page count. The installed corpus stores the accompanying NXML full text in compressed JSONL form, not a loose duplicate-PDF library. Always follow the article-level license and provide attribution.
+## Match evidence to the claim
 
-## Evidence hierarchy
+| Claim | Evidence to check |
+|---|---|
+| Causal effect | Randomized comparison or credible quasi-experiment, assignment unit, attrition, uncertainty, plausible confounding, and transfer to the target setting |
+| Prediction | Held-out evaluation with separation by participant, creative, or time as appropriate, a simple baseline, leakage checks, and incremental predictive value |
+| Mechanism | Manipulation or converging behavioral evidence, plausible competing mechanisms, and whether mediation assumptions were supported |
+| Description | Sampling, measure validity, measurement conditions, and uncertainty |
 
-Use this preference order, while accounting for direct relevance:
+Favor independent replication and relevant syntheses with transparent selection. Weigh directness, design quality, precision, and consistency together. Several papers reusing the same sample are one source of evidence. A directly relevant field experiment can inform a decision better than a synthesis of remote outcomes.
 
-1. systematic reviews and meta-analyses;
-2. preregistered replications and multi-study papers;
-3. randomized field or laboratory experiments with behavioral outcomes;
-4. longitudinal and well-controlled observational evidence;
-5. predictive neural or biometric studies with held-out validation;
-6. exploratory imaging, EEG, psychophysiology, implicit, or eye-tracking studies;
-7. conceptual papers and practitioner claims.
+- **Convergent:** credible, independent evidence supports the stated claim in comparable settings. Preserve the scope.
+- **Context-bound:** credible finding with limited transfer, uncertain magnitude, or mixed replication. Explain what changes in the proposed setting.
+- **Hypothesis:** plausible but weakly supported, unverified, or based on a proxy. Test before claiming an effect.
 
-Do not automatically rank a brain measure above observed customer behavior. A reliable purchase, recall, retention, or choice outcome is usually the more decision-relevant endpoint.
+## Calibrate common claims
 
-## Quality checklist
+- **Brain activity and intent.** A brain signal's diagnostic value depends on how selectively it tracks the process under comparable conditions. Regional activation alone leaves competing explanations open. [Poldrack, 2006](https://pubmed.ncbi.nlm.nih.gov/16406760/)
+- **Price and perceived quality.** In a controlled wine-tasting study, stated prices changed pleasantness ratings for identical wines under different price labels. The study measured experienced pleasantness in that task. Use it to motivate a hypothesis about expectations, and measure actual choice separately. [Plassmann et al., 2008](https://pubmed.ncbi.nlm.nih.gov/18195362/)
+- **Neural forecasting.** Evaluate whether the signal adds predictive value over a behavioral baseline on fresh creatives or cohorts. A finding for one format and endpoint does not establish a general purchase detector. [Venkatraman et al., 2015](https://doi.org/10.1509/jmr.13.0593)
 
-- Is the question causal, predictive, descriptive, or mechanistic?
-- Does the sample represent the target customer and usage setting?
-- Was the comparison controlled and appropriately randomized?
-- Are power, uncertainty, effect size, and multiple testing addressed?
-- Was the outcome real behavior, hypothetical choice, self-report, or neural proxy?
-- Was prediction tested out of sample?
-- Are alternative explanations and reverse inference controlled?
-- Does the intervention scale without changing the mechanism?
-- Is the effect ethically acceptable and transparent to the customer?
-
-## Application rule
-
-Express every recommendation as a falsifiable chain:
-
-`design choice -> proposed mechanism -> observable behavior -> business outcome -> test`
-
-Example: `simplify the first pricing comparison -> reduce cognitive load and improve attribute weighting -> faster accurate plan selection -> higher qualified conversion with no refund increase -> randomized page test with comprehension and purchase as co-primary outcomes`.
-
-## Citation rule
-
-Identify papers by DOI when available and PMCID otherwise. Cite the PMC source URL. Do not imply that a paper supports a recommendation beyond its population, stimulus, task, and measured outcome.
+For each decision-driving claim, record the study design, audience, exposure or intervention, outcome, direction, and limit. Give the effect and uncertainty only when verified. Report contradictory results and whether they measured different things. Cite the article next to the supported claim.

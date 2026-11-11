@@ -6,7 +6,7 @@ An evidence-led neuromarketing and consumer-neuroscience skill for LLM agents.
 
 This repository gives a compatible AI agent a disciplined way to reason about marketing psychology, branding, advertising, pricing, persuasion, sensory experience, attention, emotion, memory, reward, and consumer choice. It pairs an installable `SKILL.md` workflow with a searchable local corpus of **591 open-access research papers** spanning **10,036 verified main-article PDF pages**.
 
-## Why it is impressive
+## Capabilities
 
 - **Research at useful scale:** 591 papers and 10,036 verified PDF pages, compressed into a roughly 9 MiB local full-text corpus.
 - **Real provenance:** every paper retains its PMCID, DOI when available, source URL, license, journal, and exact PDF page count.
@@ -14,8 +14,6 @@ This repository gives a compatible AI agent a disciplined way to reason about ma
 - **Scientific guardrails:** the skill warns against reverse inference, invented effect sizes, neural hype, weak causal claims, and treating brain activity as a purchase detector.
 - **Decision-ready outputs:** research is translated into ranked recommendations, boundary conditions, ethical risks, and falsifiable experiments.
 - **Auditable construction:** the repository includes the harvester, verifier, evidence map, catalog, methodology, and false-positive exclusion record.
-
-This does not magically increase an LLM's base intelligence. It makes a compatible agent more capable in this domain by giving it specialized instructions, retrieval tools, primary-research context, and a stronger standard of evidence.
 
 ## What is inside
 
@@ -29,7 +27,9 @@ neuro-marketing/
 |   |-- corpus-state.json            Build and verification state
 |   |-- evidence-map.md              Corpus coverage and summary statistics
 |   |-- excluded-records.json        Audited false-positive removals
-|   `-- methodology.md               Evidence hierarchy and quality checklist
+|   |-- methodology.md               Evidence appraisal and retrieval
+|   |-- experiments.md               Study design and measurement
+|   `-- examples.md                  Worked applications
 `-- scripts/
     |-- search_corpus.py              Local evidence retrieval
     |-- harvest_pmc.py                Resumable PMC corpus builder and verifier
@@ -63,13 +63,16 @@ For other tools, place the directory wherever that agent discovers `SKILL.md`-st
 - “Design a packaging study with behavioral primary outcomes and eye tracking as a diagnostic.”
 - “Separate well-supported findings from neuromarketing hype in this campaign proposal.”
 
-The skill searches locally with commands such as:
+Local retrieval uses Python 3.10+ and the standard library. Run these commands from the skill directory or pass an absolute script path. Agents without shell access can use available web or supplied sources.
 
 ```powershell
 python scripts/search_corpus.py "brand familiarity memory attention" --top 12
 python scripts/search_corpus.py "price framing willingness to pay reward" --theme pricing-value --top 12
-python scripts/search_corpus.py "packaging visual attention eye tracking" --theme sensory-marketing --top 12 --json
+python scripts/search_corpus.py "packaging visual attention eye tracking" --theme sensory-marketing --top 5 --json
+python scripts/search_corpus.py --pmcid PMC1234567 --full-text
 ```
+
+Replace the example PMCID with an ID from the search results. Lookup returns the abstract by default. Use `--full-text` for article text and `--json` for a one-record array. Query mode retains its search scores and JSON format.
 
 ## Corpus coverage
 

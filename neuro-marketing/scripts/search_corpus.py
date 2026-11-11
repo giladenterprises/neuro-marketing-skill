@@ -105,7 +105,8 @@ def evidence_snippet(record: dict[str, Any], query: str, width: int = 420) -> st
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("query", help="Concepts or mechanisms to search")
+    parser.add_argument("query", nargs="?", help="Concepts or mechanisms to search")
+    parser.add_argument("--pmcid", type=str.upper, help="Retrieve one exact PMC article")
     parser.add_argument("--top", type=int, default=12)
     parser.add_argument("--theme", choices=[
         "consumer-neuroscience", "brand-ad-neuro", "consumer-decision",
@@ -114,7 +115,34 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--corpus", type=Path, default=CORPUS)
     parser.add_argument("--json", action="store_true", dest="as_json")
     parser.add_argument("--full-text", action="store_true")
-    return parser.parse_args()
+    args = parser.parse_args()
+    if (args.query is None) == (args.pmcid is None):
+        parser.error("provide a query or --pmcid")
+    if args.pmcid is not None:
+        if not re.fullmatch(r"PMC[0-9]+", args.pmcid):
+            parser.error("--pmcid must be a PMC article identifier, e.g. PMC1234567")
+        if args.theme:
+            parser.error("--theme applies only to query searches")
+    elif not tokenize(args.query):
+        parser.error("query has no searchable terms")
+    if args.top < 0:
+        parser.error("--top must be nonnegative")
+    return args
+
+
+def print_article(record: dict[str, Any], args: argparse.Namespace) -> None:
+    if args.as_json:
+        item = dict(record)
+        if not args.full_text:
+            item.pop("text", None)
+        print(json.dumps([item], ensure_ascii=False, indent=2))
+        return
+
+    print(f"{record['title']} | {record['pmcid']}")
+    if record.get("doi"):
+        print(f"doi:{record['doi']}")
+    print(record["source_url"])
+    print(record.get("text", "") if args.full_text else record.get("abstract", ""))
 
 
 def main() -> int:
@@ -123,6 +151,14 @@ def main() -> int:
         print(f"Corpus not found: {args.corpus}", file=sys.stderr)
         return 2
     records = load_records(args.corpus)
+    if args.pmcid:
+        record = next((item for item in records if item.get("pmcid") == args.pmcid), None)
+        if record is None:
+            print(f"Article not found: {args.pmcid}", file=sys.stderr)
+            return 2
+        print_article(record, args)
+        return 0
+
     ranked = score_records(records, args.query, args.theme)[: args.top]
     if args.as_json:
         output = []
@@ -147,7 +183,7 @@ def main() -> int:
             f"{record['page_count']} pp | {record['license']} | score {score:.2f}"
         )
         print(f"   {identifier} | {record['source_url']}")
-        print(f"   {evidence_snippet(record, args.query)}")
+        print(record.get("text", "") if args.full_text else f"   {evidence_snippet(record, args.query)}")
     return 0
 
 
